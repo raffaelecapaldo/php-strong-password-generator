@@ -4,7 +4,7 @@ include __DIR__ . '/functions.php';
 if (!empty($_GET['pwdLength'])) { //Controllo query
     $pwdLenght = $_GET['pwdLength'];
     $_SESSION['generatePwd'] = generatePwd($pwdLenght); //Genera la pwd
-    header('Location: ./password.php');//Redirect
+    header('Location: ./password.php'); //Redirect
 }
 
 ?>
@@ -18,6 +18,9 @@ if (!empty($_GET['pwdLength'])) { //Controllo query
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
 
     <title>Strong password generator</title>
@@ -31,7 +34,7 @@ if (!empty($_GET['pwdLength'])) { //Controllo query
     <main>
         <div class="container p-2" id="app">
             <div class="generator text-center">
-                <p class="fs-3">Inserisci la lunghezza della password da generare, minimo 8 caratteri e invia!</p>
+                <p class="fs-5">Inserisci la lunghezza della password da generare (di minimo 8 caratteri) e invia!</p>
                 <div class="container d-flex justify-content-center">
                     <form action="">
                         <div class="input-group mb-3">

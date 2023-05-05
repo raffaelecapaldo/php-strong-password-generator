@@ -1,8 +1,31 @@
+
+
 body {
     background-color: #BAF2E9;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 #app {
     background-color: #BAD7F2;
+}
+
+#generated {
+    background-color: #54FF75;
+}
+
+
+#app,#generated {
     border-radius:5px;
+    width: fit-content;
+}
+
+#pwd {
+    background-color: yellow;
+    color:yellow;
+    padding:5px;
+    border-radius:2px;
+}
+
+#pwd:hover {
+    color:black;
 }
