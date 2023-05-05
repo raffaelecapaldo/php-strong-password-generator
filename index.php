@@ -1,8 +1,10 @@
 <?php
+session_start();
 include __DIR__ . '/functions.php';
 if (!empty($_GET['pwdLength'])) { //Controllo query
     $pwdLenght = $_GET['pwdLength'];
-    $generatedPasswd = generatePwd($pwdLenght); //Genera la pwd
+    $_SESSION['generatePwd'] = generatePwd($pwdLenght); //Genera la pwd
+    header('Location: ./password.php');//Redirect
 }
 
 ?>
@@ -34,15 +36,9 @@ if (!empty($_GET['pwdLength'])) { //Controllo query
                     <form action="">
                         <div class="input-group mb-3">
                             <span class="input-group-text">Lunghezza</span>
-                            <input name="pwdLength" type="number" min="8" class="form-control">
+                            <input name="pwdLength" value="8" type="number" min="8" max="64" class="form-control">
                             <button type="submit" class="btn btn-primary">Genera</button>
                         </div>
-                        <?php if (!empty($generatedPasswd)) { ?>
-                            <div class="generated-pwd">
-                                <p class="fs-3">La tua password è: <?php echo $generatedPasswd ?> </p>
-                            </div>
-                        <?php } ?>
-
                 </div>
                 </form>
             </div>
