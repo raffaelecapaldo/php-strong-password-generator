@@ -32,7 +32,7 @@ $generatedPwd = $_SESSION['generatePwd']; //recupera pwd da array session
             <p class="m-0 text-center">La tua password è stata generata, conservala bene, non potrai più recuperarla!</p>
             <p class="m-0 text-center">Vai col mouse sul box giallo, o da mobile cliccaci su, per mostrarla!</p>
             <p class="fs-4 mt-2 mb-1 text-uppercase">La tua password è </p>
-            <div class="fs-2">
+            <div class="fs-2 container-fluid d-flex align-items-center flex-column">
             <span id="pwd" class="fw-bold"><?php echo $generatedPwd ?></span>
             <div class="controls mt-3 d-flex justify-content-center">
             <a class href="./index.php"><button type="submit" class="btn btn-primary">Home</button></a>
