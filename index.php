@@ -1,7 +1,12 @@
 <?php
 session_start();
 include __DIR__ . '/functions.php';
-if (!empty($_GET['pwdLength'])) { //Controllo query
+if (!empty($_GET['pwdLength']) && !ctype_digit($_GET['pwdLength'])) {//Se viene passata alla queryString in url non un numero, ricarica la pagina
+    //e non eseguire la funzione (evitamento overflow)
+    header('Location: ./index.php');
+}
+
+else if (!empty($_GET['pwdLength'])) { //Controllo query
     $pwdLenght = $_GET['pwdLength'];
     $_SESSION['generatePwd'] = generatePwd($pwdLenght); //Genera la pwd
     header('Location: ./password.php'); //Redirect
@@ -34,7 +39,7 @@ if (!empty($_GET['pwdLength'])) { //Controllo query
     <main>
         <div class="container p-2" id="app">
             <div class="generator text-center">
-                <p class="fs-5">Inserisci la lunghezza della password da generare (di minimo 8 caratteri) e invia!</p>
+                <p class="fs-5">Inserisci la lunghezza della password da generare (tra 8 e 64 caratteri) e invia!</p>
                 <div class="container d-flex justify-content-center">
                     <form action="">
                         <div class="input-group mb-3">

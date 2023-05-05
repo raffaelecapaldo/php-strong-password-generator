@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (empty($_SESSION['generatePwd']) || strlen($_SESSION['generatePwd']) < 8) { //Se non c'è una pwd o è minore di otto caratteri, torna alla index
+if (empty($_SESSION['generatePwd']) || strlen($_SESSION['generatePwd']) < 8 || strlen($_SESSION['generatePwd']) > 64) { //Se non c'è una pwd o è minore di otto caratteri, torna alla index
     header('Location: ./index.php');
 }
 $generatedPwd = $_SESSION['generatePwd']; //recupera pwd da array session

@@ -2,6 +2,7 @@
 
 function generatePwd($length)
 {
+
     $password = '';
     $characters = [ //Array contenente tutti i caratteri usabili nella pwd
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
