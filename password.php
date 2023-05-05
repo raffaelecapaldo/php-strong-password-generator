@@ -45,6 +45,6 @@ $generatedPwd = $_SESSION['generatePwd']; //recupera pwd da array session
 </html>
 
 <?php
-//$_SESSION['generatePwd'] = ''; //Svuota pwd, poco sicuro poter riaccedere alla PWD andando su password.php
+$_SESSION['generatePwd'] = ''; //Svuota pwd, poco sicuro poter riaccedere alla PWD andando su password.php
 
 ?>
